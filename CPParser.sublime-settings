@@ -1,8 +1,8 @@
 {
     // Your parent directory for coding
-    "PARENT_DIR": "/Users/hritik/Documents/PROGRAMMING/Contests/Codeforces",
+    "PARENT_DIR": "",
     // Only cpp is supported for now so don't change this, I'll try to add more supported languages
     "EXTENSION": "cpp",
-    // Initials code snippet you want to load
-    "SNIPPETS": "/Users/hritik/Documents/PROGRAMMING/Contests/code.txt",
+    // Initials code snippet .txt file you want to load
+    "SNIPPETS": "",
 }
