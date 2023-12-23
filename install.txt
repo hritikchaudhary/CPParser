@@ -1,4 +1,8 @@
 # CPParser
+
+## Important Prerequisite
+Go to Settings -> Package -> Settings -> CPParser -> Settings - Default and add your directory paths.
+
 Only Codeforces & Codechef are supported as of now I'll be adding support for other sites soon, please create an issue if you want to request support for a site.
 
 This ST4 plugin functions as follows:
