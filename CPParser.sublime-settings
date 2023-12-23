@@ -1,6 +1,8 @@
 {
-    // Your parent directory for coding
-    "PARENT_DIR": "/Users/hritik/Documents/PROGRAMMING/Contests/Codeforces",
+    // Your Codeforces directory
+    "CODEFORCES_DIR": "/Users/hritik/Documents/PROGRAMMING/Contests/Codeforces",
+    // Your Codechef directory
+    "CODECHEF_DIR": "/Users/hritik/Documents/PROGRAMMING/Contests/Codechef",
     // Only cpp is supported for now so don't change this, I'll try to add more supported languages
     "EXTENSION": "cpp",
     // Initials code snippet you want to load
