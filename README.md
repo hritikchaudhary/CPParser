@@ -1,4 +1,8 @@
-# CPParser
+# CP Parser
+
+## Important Prerequisite
+Go to Settings -> Package Settings -> CPParser -> Settings and add your directory paths.
+
 Only Codeforces & Codechef are supported as of now I'll be adding support for other sites soon, please create an issue if you want to request support for a site.
 
 This ST4 plugin functions as follows:
@@ -8,12 +12,20 @@ This ST4 plugin functions as follows:
 3. Generates a new .cpp file using a predefined template.
 4. Parses testcases on Codeforces & Codechef in CPPFastOlympicCoding format, so if you're using CPPFastOlympicCoding testcases will be automatically added.
 
-### Keyboard Shortcuts
+### Usage
+Upon installation, configuring settings (such as defining the default directory and snippets) is advised default path is ~/Documents/CPParser
 
-For all operating systems, pressing ctrl+alt+x opens a dialogue box prompting for the problem URL.
+1. Tools -> CP Parser -> New Problem
+2. Command Palette -> search CP Parser: Parse New Problem
 
-### How to Utilize
+### Set Keybindings
+You can access keybindings through Preferences > Key Bindings and add your Key Bindings like the following
 
-Upon installation, configuring settings (such as defining the default directory and snippets) is necessary.
+```
+{ "keys": ["ctrl+alt+x"], "command": "cp_problem" }
+```
 
-Once settings are configured, using ctrl+alt+x opens a dialogue box for entering the problem URL.
+### Supported Websites (current)
+
+1. Codeforces
+2. Codechef

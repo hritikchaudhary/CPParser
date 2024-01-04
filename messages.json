@@ -1,3 +1,6 @@
 {
-	"install": "install.txt"
+	"install": [
+		"README.md",
+		"open_settings"
+	]
 }

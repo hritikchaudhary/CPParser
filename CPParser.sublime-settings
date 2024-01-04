@@ -1,7 +1,7 @@
 {
-    // Your Codeforces directory for eg: "/Users/hritik/Documents/Contests/Codeforces"
+    // Your Codeforces directory default is "~Documents/CPParser/Codeforces"
     "CODEFORCES_DIR": "",
-    // Your Codechef directory for eg: "/Users/hritik/Documents/Contests/Codechef"
+    // Your Codechef directory default is "~Documents/CPParser/Codechef"
     "CODECHEF_DIR": "",
     // Only cpp is supported for now so don't change this, I'll try to add more supported languages
     "EXTENSION": "cpp",
