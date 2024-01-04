@@ -9,16 +9,6 @@ from bs4 import BeautifulSoup
 # Constants
 LAST_URL = ''
 
-# Load settings from the Sublime Text configuration file
-
-
-def load_settings():
-    try:
-        return sublime.load_settings('CPParser.sublime-settings')
-    except Exception as e:
-        print("Exception Occured")
-        sublime.error_message('Unable to open settings file')
-
 
 def get_codeforces_dir(settings):
     parent_dir = settings.get('CODEFORCES_DIR', '.')
@@ -142,7 +132,7 @@ def parse(self, url):
     testcases = []
     parent_dir = ''
 
-    settings = load_settings()
+    settings = sublime.load_settings('CPParser.sublime-settings')
     extension = get_extension(settings)
     if 'codeforces.com' in url:
         content = parse_content_codeforces(url)
@@ -151,11 +141,19 @@ def parse(self, url):
         title = content[0]
         testcases = content[1]
         parent_dir = get_codeforces_dir(settings)
+        if not parent_dir:
+            default_directory = os.path.join(os.path.expanduser('~'), 'Documents', 'CPParser', 'Codeforces')
+            print(default_directory)
+            parent_dir = default_directory
     elif 'codechef.com' in url:
         content = parse_content_codechef(url)
         title = content[0]
         testcases = content[1]
         parent_dir = get_codechef_dir(settings)
+        if not parent_dir:
+            default_directory = os.path.join(os.path.expanduser('~'), 'Documents', 'CPParser', 'Codechef')
+            print(default_directory)
+            parent_dir = default_directory
     else:
         sublime.error_message('Unsupported website')
         return
@@ -169,13 +167,13 @@ def parse(self, url):
 
     snippets_file_name = settings.get('SNIPPETS', None)
     snippets_content = ''
-    if snippets_file_name is not None:
+    if snippets_file_name is not None and snippets_file_name.strip() != '':
         try:
             with open(snippets_file_name) as snippets_file:
                 snippets_content = snippets_file.readlines()
         except FileNotFoundError as e:
-            print('File not found ', snippets_file_name)
-            sublime.error_message('File not found ' +
+            print('Snippet file not found ', snippets_file_name)
+            sublime.error_message('Snippet file not found ' +
                                   snippets_file_name + ' - ' + str(e))
             return
 
