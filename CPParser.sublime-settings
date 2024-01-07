@@ -1,7 +1,7 @@
 {
-    // Your Codeforces directory default is "~Documents/CPParser/Codeforces"
+    // Your Codeforces directory default is "~/Sublime Text/Packages/Users/CPParser/Codeforces"
     "CODEFORCES_DIR": "",
-    // Your Codechef directory default is "~Documents/CPParser/Codechef"
+    // Your Codechef directory default is "~/Sublime Text/Packages/Users/CPParser/Codechef"
     "CODECHEF_DIR": "",
     // Only cpp is supported for now so don't change this, I'll try to add more supported languages
     "EXTENSION": "cpp",
