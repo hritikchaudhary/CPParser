@@ -142,7 +142,12 @@ def parse(self, url):
         testcases = content[1]
         parent_dir = get_codeforces_dir(settings)
         if not parent_dir:
-            default_directory = os.path.join(os.path.expanduser('~'), 'Documents', 'CPParser', 'Codeforces')
+            default_directory = os.path.join(
+                sublime.packages_path(),
+                'User',
+                'CPParser',
+                'Codeforces'
+            )
             print(default_directory)
             parent_dir = default_directory
     elif 'codechef.com' in url:
@@ -151,7 +156,12 @@ def parse(self, url):
         testcases = content[1]
         parent_dir = get_codechef_dir(settings)
         if not parent_dir:
-            default_directory = os.path.join(os.path.expanduser('~'), 'Documents', 'CPParser', 'Codechef')
+            default_directory = os.path.join(
+                sublime.packages_path(),
+                'User',
+                'CPParser',
+                'Codechef'
+            )
             print(default_directory)
             parent_dir = default_directory
     else:
