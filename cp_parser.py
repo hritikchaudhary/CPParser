@@ -148,7 +148,6 @@ def parse(self, url):
                 'CPParser',
                 'Codeforces'
             )
-            print(default_directory)
             parent_dir = default_directory
     elif 'codechef.com' in url:
         content = parse_content_codechef(url)
@@ -162,7 +161,6 @@ def parse(self, url):
                 'CPParser',
                 'Codechef'
             )
-            print(default_directory)
             parent_dir = default_directory
     else:
         sublime.error_message('Unsupported website')
