@@ -11,12 +11,26 @@ LAST_URL = ''
 
 
 def get_codeforces_dir(settings):
-    parent_dir = settings.get('CODEFORCES_DIR', '.')
+    parent_dir = settings.get('CODEFORCES_DIR',)
+    if not parent_dir:
+        return os.path.join(
+            sublime.packages_path(),
+            'User',
+            'CPParser',
+            'Codeforces'
+        )
     return os.path.join(parent_dir)
 
 
 def get_codechef_dir(settings):
-    parent_dir = settings.get('CODECHEF_DIR', '.')
+    parent_dir = settings.get('CODECHEF_DIR')
+    if not parent_dir:
+        return os.path.join(
+            sublime.packages_path(),
+            'User',
+            'CPParser',
+            'Codechef'
+        )
     return os.path.join(parent_dir)
 
 
@@ -141,27 +155,11 @@ def parse(self, url):
         title = content[0]
         testcases = content[1]
         parent_dir = get_codeforces_dir(settings)
-        if not parent_dir:
-            default_directory = os.path.join(
-                sublime.packages_path(),
-                'User',
-                'CPParser',
-                'Codeforces'
-            )
-            parent_dir = default_directory
     elif 'codechef.com' in url:
         content = parse_content_codechef(url)
         title = content[0]
         testcases = content[1]
         parent_dir = get_codechef_dir(settings)
-        if not parent_dir:
-            default_directory = os.path.join(
-                sublime.packages_path(),
-                'User',
-                'CPParser',
-                'Codechef'
-            )
-            parent_dir = default_directory
     else:
         sublime.error_message('Unsupported website')
         return
