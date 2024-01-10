@@ -11,7 +11,7 @@ LAST_URL = ''
 
 
 def get_codeforces_dir(settings):
-    parent_dir = settings.get('CODEFORCES_DIR',)
+    parent_dir = settings.get('CODEFORCES_DIR')
     if not parent_dir:
         return os.path.join(
             sublime.packages_path(),
