@@ -35,7 +35,7 @@ def get_codechef_dir(settings):
 
 
 def get_extension(settings):
-    return settings.get('EXTENSION', '')
+    return settings.get('EXTENSION')
 
 # Function to create a file based on given parameters
 
@@ -182,14 +182,8 @@ def parse(self, url):
             sublime.error_message('Snippet file not found ' +
                                   snippets_file_name + ' - ' + str(e))
             return
-
-    with open(file, 'w') as newfile:
-        newfile.writelines(snippets_content)
-    with open(file, 'r') as new_file:
-        filedata = new_file.read()
-    filedata = filedata.replace('url', LAST_URL)
-    with open(file, 'w') as new_file:
-        new_file.write(filedata)
+        with open(file, 'w') as newfile:
+            newfile.writelines(snippets_content)
     return file
 
 
